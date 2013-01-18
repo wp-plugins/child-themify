@@ -3,7 +3,7 @@ Contributors: JohnPBloch
 Tags: themes, child, theme
 Requires at least: 3.4.2
 Tested up to: 3.5
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,10 +32,13 @@ None yet.
 
 == Changelog ==
 
+= 1.0.1 =
+* Add a semicolon to the end of the @import line in the stylesheet. Props to Luis Alejandre (wpthemedetector.com) for finding and solving.
+
 = 1.0 =
 * Initial Release
 
 == Upgrade Notice ==
 
-= 1.0 =
-How are you seeing this?
+= 1.0.1 =
+This version fixes a bug that will prevent some users' css from taking effect in new child themes.

@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Child Themify
  * Description: Enables the quick creation of child themes from any non-child theme you have installed.
- * Version: 1.0
+ * Version: 1.0.1
  * Plugin URI: https://github.com/johnpbloch/child-themify
  * Author: John P. Bloch
  * License: GPLv2 or later
@@ -142,7 +142,7 @@ Description: A child theme of $oldName
 Template: $oldStylesheet
 */
 
-@import url("../$oldStylesheet/style.css")
+@import url("../$oldStylesheet/style.css");
 
 EOF;
 		$wp_filesystem->put_contents( $newStylesheet, $stylesheetContents );
