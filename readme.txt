@@ -2,8 +2,8 @@
 Contributors: JohnPBloch
 Tags: themes, child, theme
 Requires at least: 3.4.2
-Tested up to: 3.5
-Stable tag: 1.0.1
+Tested up to: 3.8
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ None yet.
 
 == Changelog ==
 
+= 1.0.2 =
+* Added support for WP 3.8
+
 = 1.0.1 =
 * Add a semicolon to the end of the @import line in the stylesheet. Props to Luis Alejandre (wpthemedetector.com) for finding and solving.
 
@@ -39,6 +42,9 @@ None yet.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+This version fixes the plugin in WordPress 3.8
 
 = 1.0.1 =
 This version fixes a bug that will prevent some users' css from taking effect in new child themes.
