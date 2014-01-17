@@ -18,8 +18,8 @@ This plugin is multisite compatible; if used on a multisite network, controls fo
 == Installation ==
 
 1. Upload the `child-themify` directory and its contents to the `/wp-content/plugins/` directory (or your custom location if you manually changed the location).
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. You can now create a child theme of any non-child theme you have installed by going to the themes page and clicking "Create a child theme" from the actions links of the theme of your choice.
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. You can now create a child theme of any non-child theme you have installed by going to the themes page and clicking "Create a child theme" from the actions links of the theme of your choice.
 
 == Frequently Asked Questions ==
 
@@ -47,3 +47,4 @@ None yet.
 == Upgrade Notice ==
 
 This version fixes the plugin in WordPress 3.8
+
