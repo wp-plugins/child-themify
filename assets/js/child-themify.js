@@ -1,3 +1,5 @@
+/*! Child Themify - v1.0.2
+* Copyright (c) 2014 John P. Bloch */
 (function (window, l10n, undefined) {
 	var $ = window.jQuery,
 			themes = window.wp.themes,

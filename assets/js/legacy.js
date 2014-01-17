@@ -1,3 +1,5 @@
+/*! Child Themify - v1.0.2
+* Copyright (c) 2014 John P. Bloch */
 (function (window, l10n) {
 	if (typeof l10n.link !== 'string' || l10n.link.length < 1) {
 		return;

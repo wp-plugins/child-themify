@@ -4,7 +4,7 @@ Tags: themes, child, theme
 Requires at least: 3.4.2
 Tested up to: 3.8
 Stable tag: 1.0.2
-License: GPLv2 or later
+License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Create child themes at the click of a button.
@@ -33,18 +33,17 @@ None yet.
 == Changelog ==
 
 = 1.0.2 =
+* Released: 2014-01-13
 * Added support for WP 3.8
 
 = 1.0.1 =
+* Released: 2013-01-18
 * Add a semicolon to the end of the @import line in the stylesheet. Props to Luis Alejandre (wpthemedetector.com) for finding and solving.
 
 = 1.0 =
+* Released: 2012-12-31
 * Initial Release
 
 == Upgrade Notice ==
 
-= 1.0.2 =
 This version fixes the plugin in WordPress 3.8
-
-= 1.0.1 =
-This version fixes a bug that will prevent some users' css from taking effect in new child themes.
