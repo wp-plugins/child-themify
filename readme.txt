@@ -2,8 +2,8 @@
 Contributors: JohnPBloch
 Tags: themes, child, theme
 Requires at least: 3.4.2
-Tested up to: 3.9
-Stable tag: 1.0.3
+Tested up to: 4.0.9
+Stable tag: 1.0.4
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ None yet.
 
 == Changelog ==
 
+= 1.0.4 =
+* Released: 2014-09-15
+* Added support for WordPress 4.0
+
 = 1.0.3 =
 * Released: 2014-04-15
 * Standardized theme action links shim. See https://github.com/johnpbloch/child-themify/issues/2 for more information
@@ -51,5 +55,5 @@ None yet.
 
 == Upgrade Notice ==
 
-This version cleans up 3.8+ compatibility and ensures 3.9 compatibility
+This version fixes 4.0 compatibility
 
