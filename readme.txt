@@ -35,6 +35,7 @@ I'd really prefer that you use [Github's issue tracker](https://github.com/johnp
 == Changelog ==
 
 = 1.1.0 =
+* Released: 2014-12-20
 * Thumbnail now gets copied when you create a child theme
 * Various other tweaks and security hardening
 
