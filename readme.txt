@@ -35,8 +35,8 @@ I'd really prefer that you use [Github's issue tracker](https://github.com/johnp
 == Changelog ==
 
 = 1.1.0 =
-* NOT YET RELEASED
 * Thumbnail now gets copied when you create a child theme
+* Various other tweaks and security hardening
 
 = 1.0.4 =
 * Released: 2014-09-15
@@ -61,5 +61,5 @@ I'd really prefer that you use [Github's issue tracker](https://github.com/johnp
 
 == Upgrade Notice ==
 
-This version fixes 4.0 compatibility
+Minor release with tweaks and thumbnail support
 
