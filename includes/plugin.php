@@ -11,7 +11,7 @@ class Child_Themify {
 	 */
 	public function isActionAllowed( WP_Theme $theme ) {
 		if ( ! $this->checkCapability() ) {
-			wp_die( __( 'You do not have permission to do that!', 'child-themify' ) );
+			wp_die( esc_html__( 'You do not have permission to do that!', 'child-themify' ) );
 		}
 		check_admin_referer( $this->nonceName( $theme ), '_ctf_nonce' );
 	}
@@ -48,6 +48,7 @@ class Child_Themify {
 		if ( $theme ) {
 			$nonce_name .= '_' . $theme->get_stylesheet();
 		}
+
 		return $nonce_name;
 	}
 
@@ -70,8 +71,8 @@ class Child_Themify {
 			<h2><?php echo esc_html( sprintf( _x( 'Create a child theme from %s', 'The placeholder is for a theme\'s name', 'child-themify' ), $theme->name ) ); ?></h2>
 
 			<form method="post" action="<?php echo esc_url( $this->getLink( $theme ) ); ?>">
-				<label><?php esc_html_e( 'Name your child theme', 'child-themify' ); ?></label><br>
-				<input type="text" name="new_theme" />
+				<label for="ctf_new_theme"><?php esc_html_e( 'Name your child theme', 'child-themify' ); ?></label><br>
+				<input type="text" name="new_theme" id="ctf_new_theme" />
 				<?php submit_button( __( "Let's go!", 'child-themify' ) ); ?>
 			</form>
 		</div>
@@ -96,9 +97,12 @@ class Child_Themify {
 		}
 		if ( ! WP_Filesystem( $creds, get_theme_root() ) ) {
 			request_filesystem_credentials( $url, '', true, get_theme_root(), array( 'new_theme' ) );
+
 			return true;
 		}
 		$this->create( $_POST['new_theme'], $theme );
+
+		return false;
 	}
 
 	/**
@@ -119,6 +123,7 @@ class Child_Themify {
 			'theme'      => $theme->get_stylesheet(),
 			'_ctf_nonce' => $this->nonce( $theme ),
 		);
+
 		return add_query_arg( $args, $this->getBaseLink() );
 	}
 
@@ -150,9 +155,10 @@ class Child_Themify {
 			return $links;
 		}
 		$link = $this->getLink( $theme );
-		$html = sprintf( "<a href=\"$link\">%s</a>", __( 'Create a child theme', 'child-themify' ) );
+		$html = sprintf( '<a href="%s">%s</a>', esc_url( $link ), esc_html__( 'Create a child theme', 'child-themify' ) );
 
 		$links['child-themify'] = $html;
+
 		return $links;
 	}
 
@@ -167,13 +173,15 @@ class Child_Themify {
 	 * @throws Exception If the global filesystem object isn't available
 	 */
 	public function create( $new_theme, WP_Theme $template ) {
+		/** @var WP_Filesystem_Base $wp_filesystem */
 		global $wp_filesystem;
 		if ( ! ( $wp_filesystem instanceof WP_Filesystem_Base ) ) {
 			if ( ! WP_Filesystem() ) {
-				throw new Exception( __( 'Could not access the filesystem!', 'child-themify' ) );
+				throw new Exception( esc_html__( 'Could not access the filesystem!', 'child-themify' ) );
 			}
 		}
 		$oldStylesheet       = $template->get_stylesheet();
+		$templateDirectory   = untrailingslashit( $template->get_stylesheet_directory() );
 		$oldName             = $template->name;
 		$new_theme_directory = trailingslashit( get_theme_root() ) . sanitize_file_name( strtolower( $new_theme ) );
 		$wp_filesystem->mkdir( $new_theme_directory );
@@ -191,7 +199,10 @@ Template: $oldStylesheet
 
 EOF;
 		$wp_filesystem->put_contents( $newStylesheet, $stylesheetContents );
-		add_settings_error( '', 'child-themify', __( 'Your child theme was created successfully.', 'child-themify' ), 'updated' );
+		if ( file_exists( "$templateDirectory/screenshot.png" ) ) {
+			$wp_filesystem->copy( "$templateDirectory/screenshot.png", "$new_theme_directory/screenshot.png" );
+		}
+		add_settings_error( '', 'child-themify', esc_html__( 'Your child theme was created successfully.', 'child-themify' ), 'updated' );
 	}
 
 	public function loadThemesPage() {
@@ -215,9 +226,7 @@ EOF;
 		load_plugin_textdomain( 'child-themify', false, basename( dirname( __FILE__ ) ) . '/languages' );
 		add_filter( 'theme_action_links', array( $this, 'addActionLink' ), 10, 2 );
 		add_action( 'load-themes.php', array( $this, 'loadThemesPage' ) );
-		if ( version_compare( $GLOBALS['wp_version'], '4.1.9', '<' ) ) {
-			add_action( 'admin_footer-themes.php', array( $this, 'override_tmpl_theme_single' ) );
-		}
+		add_action( 'admin_footer-themes.php', array( $this, 'override_tmpl_theme_single' ) );
 		add_action( 'tmpl-theme-single_actions', array( $this, 'tmpl_theme_single_actions' ) );
 		add_filter( 'wp_prepare_themes_for_js', array( $this, 'prepare_themes' ) );
 	}
@@ -311,12 +320,13 @@ EOF;
 	public function prepare_themes( $themes ) {
 		if ( $this->checkCapability() ) {
 			foreach ( $themes as $slug => $data ) {
-				$theme         = wp_get_theme( $slug );
-				$download_link = $this->getLink( $theme );
+				$theme = wp_get_theme( $slug );
+				$link  = $this->getLink( $theme );
 
-				$themes[$slug]['actions']['childThemify'] = $download_link ? $download_link : false;
+				$themes[ $slug ]['actions']['childThemify'] = $link ? $link : false;
 			}
 		}
+
 		return $themes;
 	}
 

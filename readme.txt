@@ -3,7 +3,7 @@ Contributors: JohnPBloch
 Tags: themes, child, theme
 Requires at least: 3.4.2
 Tested up to: 4.1.9
-Stable tag: 1.0.4
+Stable tag: 1.1
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,9 @@ This plugin is multisite compatible; if used on a multisite network, controls fo
 
 == Frequently Asked Questions ==
 
-None yet.
+= Where can I get some help? =
+
+I'd really prefer that you use [Github's issue tracker](https://github.com/johnpbloch/child-themify/issues/new). The [WordPress.org support forum for the plugin](https://wordpress.org/support/plugin/child-themify) will work too, it will just take longer.
 
 == Screenshots ==
 
@@ -31,6 +33,10 @@ None yet.
 2. Single site administration area
 
 == Changelog ==
+
+= 1.1.0 =
+* NOT YET RELEASED
+* Thumbnail now gets copied when you create a child theme
 
 = 1.0.4 =
 * Released: 2014-09-15
