@@ -3,7 +3,7 @@ Contributors: JohnPBloch
 Tags: themes, child, theme
 Requires at least: 3.4.2
 Tested up to: 4.1.9
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ I'd really prefer that you use [Github's issue tracker](https://github.com/johnp
 
 == Changelog ==
 
+= 1.1.1 =
+* Released: 2015-01-13
+* Added French translation from FR_lucien
+
 = 1.1.0 =
 * Released: 2014-12-20
 * Thumbnail now gets copied when you create a child theme
@@ -62,5 +66,5 @@ I'd really prefer that you use [Github's issue tracker](https://github.com/johnp
 
 == Upgrade Notice ==
 
-Minor release with tweaks and thumbnail support
+Added French translation
 

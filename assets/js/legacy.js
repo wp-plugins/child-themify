@@ -1,5 +1,5 @@
-/*! Child Themify - v1.1
-* Copyright (c) 2014 John P. Bloch */
+/*! Child Themify - v1.1.1
+* Copyright (c) 2015 John P. Bloch */
 (function (window, l10n) {
 	if (typeof l10n.link !== 'string' || l10n.link.length < 1) {
 		return;

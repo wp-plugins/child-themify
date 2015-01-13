@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Child Themify
  * Description: Create child themes at the click of a button.
- * Version: 1.1
+ * Version: 1.1.1
  * Plugin URI: https://github.com/johnpbloch/child-themify
  * Author: John P. Bloch
  * License: GPL-2.0+
@@ -10,7 +10,7 @@
 
 define( 'CTF_PATH', WP_PLUGIN_DIR . '/' . basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ ) );
 define( 'CTF_URL', WP_PLUGIN_URL . '/' . basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ ) );
-define( 'CTF_VERSION', '1.1' );
+define( 'CTF_VERSION', '1.1.1' );
 
 
 function ctf_plugins_loaded() {
